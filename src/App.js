@@ -11,16 +11,20 @@ function App() {
   const [selecionados, setSelecionados] = useState([]);
   const [palavraSecreta, setPalavraSecreta] = useState([]);
   const [contErro, setErro] = useState(0);
+  const [contAcerto, setAcerto] = useState(0);
   const [ganhou, setGanhou] = useState(false);
   const [perdeu, setPerdeu] = useState(false);
-  const [chute, setChute] = useState("")
+  const [chute, setChute] = useState("");
+  
 
 function comecarJogo() {                
   setPreJogo(false); 
   palavraAleatoria();
+  setAcerto(0)
   setErro(0)
   setGanhou(false)
   setPerdeu(false)
+  setSelecionados([])
 
 }
 
@@ -39,30 +43,53 @@ function fazerJogada(letra){
     for(let i = 0; i < palavraChave.length; i++) {
       if (letra.toLowerCase() === palavraChave[i]){
         palavraSecreta[i] = letra.toLowerCase();
+        let numero = contAcerto
+        numero = numero + 1
+        if (numero === palavraChave.length){
+          ganharJogo();
+        } else{
+          setAcerto(numero)
+        }
+
       } 
     }
   }else {
-    let number =  contErro
-    number = number + 1
-    setErro(number)
+    let numero =  contErro
+    numero = numero + 1
+    if (numero === 6){
+      perderJogo();
+    } else{
+      setErro(numero);
+    }
+    
   }
 }
 
 function chutar(palavra){
   const resposta = palavraChave.join('')
   if (palavra.toLowerCase() === resposta){    
+    ganharJogo()
+
+  } else {
+    perderJogo();
+
+  }
+
+}
+
+function ganharJogo(){
     setGanhou(true)
     setPalavraSecreta(palavraChave)    
     setPreJogo(true)
 
-  } else {
+}
+
+function perderJogo(){
     setPerdeu(true)
     setPalavraSecreta(palavraChave)
     setErro(6)
     setPreJogo(true)
-
-  }
-
+  
 }
 
   return (
