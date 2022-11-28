@@ -6,16 +6,29 @@ import { useState } from 'react'
 
 function App() {
   const [alfabeto, setAlfabeto] = useState(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"])
-  const palavraChave = ["i", "n", "u", "y", "a", "s", "h"]
-  const [preJogo, setJogo] = useState(true)
+  const [palavraChave, setPalavraChave] = useState([])
+  const [preJogo, setPreJogo] = useState(true)
+  const [selecionados, setSelecionados] = useState([]);
+
+function comecarJogo() {                
+  setPreJogo(false); 
+  palavraAleatoria();
+
+}
+
+function palavraAleatoria() {                
+  const aleatoria = palavras[Math.floor(Math.random() * palavras.length)].split("");
+  setPalavraChave(aleatoria)
+  
+
+}
 
   return (
     <div className="container-pagina">     
      <Jogo 
-      palavraChave={palavraChave}      
-      setJogo={setJogo}
-      alfabeto={alfabeto}
-      setAlfabeto={setAlfabeto}      
+      comecarJogo={comecarJogo}
+      palavraChave={palavraChave}
+      selecionados={selecionados}
      />
      <Letras 
       alfabeto={alfabeto}
@@ -28,6 +41,7 @@ function App() {
     </div>   
   )
 }
+
 
 export default App
 
