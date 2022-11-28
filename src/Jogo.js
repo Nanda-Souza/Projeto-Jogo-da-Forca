@@ -1,4 +1,4 @@
-function Jogo({palavraChave, comecarJogo, palavraSecreta, contErro}) {     
+function Jogo({palavraChave, comecarJogo, palavraSecreta, contErro, ganhou, perdeu}) {     
 
     return (
         <div className="container-superior">
@@ -10,7 +10,7 @@ function Jogo({palavraChave, comecarJogo, palavraSecreta, contErro}) {
             <div className="botao">
                 <button className="escolha" onClick={comecarJogo}>Escolher Palavra</button>
             </div>
-            <ul className={`palavra-chave ${(palavraChave.length === 0) ? "esconder" : ""}`}>
+            <ul className={`palavra-chave ${(palavraChave.length === 0) ? "esconder" : ""} ${ganhou ? "ganhou" : ""} ${perdeu ? "perdeu" : ""}`}>
                 {palavraSecreta.map((p, index) => (                    
                     <li key={index} className="lista"> {p} </li>
                 ))}

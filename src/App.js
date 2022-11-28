@@ -11,6 +11,9 @@ function App() {
   const [selecionados, setSelecionados] = useState([]);
   const [palavraSecreta, setPalavraSecreta] = useState([]);
   const [contErro, setErro] = useState(0);
+  const [ganhou, setGanhou] = useState(false);
+  const [perdeu, setPerdeu] = useState(false);
+  const [chute, setChute] = useState("")
 
 function comecarJogo() {                
   setPreJogo(false); 
@@ -42,6 +45,21 @@ function fazerJogada(letra){
   }
 }
 
+function chutar(palavra){
+  const resposta = palavraChave.join('')
+  if (palavra.toLowerCase() === resposta){    
+    setGanhou(true)
+    setPalavraSecreta(palavraChave)    
+
+  } else {
+    setPerdeu(true)
+    setPalavraSecreta(palavraChave)
+    setErro(6)
+
+  }
+
+}
+
   return (
     <div className="container-pagina">     
      <Jogo 
@@ -49,6 +67,8 @@ function fazerJogada(letra){
       palavraChave={palavraChave}
       palavraSecreta={palavraSecreta}
       contErro={contErro}
+      ganhou={ganhou}
+      perdeu={perdeu}
      />
      <Letras 
       alfabeto={alfabeto}
@@ -57,7 +77,10 @@ function fazerJogada(letra){
       fazerJogada={fazerJogada}          
      /> 
      <Chute 
-      preJogo={preJogo}      
+      preJogo={preJogo}
+      chute={chute}
+      setChute={setChute}
+      chutar={chutar}
      />
 
     </div>   
