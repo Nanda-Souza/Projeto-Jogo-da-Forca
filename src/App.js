@@ -39,19 +39,15 @@ function fazerJogada(letra){
   setSelecionados([...selecionados, letra])    
   console.log(palavraChave)
   console.log(palavraSecreta)
+  console.log(contAcerto)
   if (palavraChave.includes(letra.toLowerCase())){
-    for(let i = 0; i < palavraChave.length; i++) {
+    for(let i = 0; i < palavraChave.length; i++) {      
       if (letra.toLowerCase() === palavraChave[i]){
-        palavraSecreta[i] = letra.toLowerCase();
-        let numero = contAcerto
-        numero = numero + 1
-        if (numero === palavraChave.length){
-          ganharJogo();
-        } else{
-          setAcerto(numero)
-        }
-
+          palavraSecreta[i] = letra.toLowerCase();
       } 
+    }
+    if(!palavraSecreta.includes("_")){
+      ganharJogo();
     }
   }else {
     let numero =  contErro

@@ -3,14 +3,16 @@ function Jogo({palavraChave, comecarJogo, palavraSecreta, contErro, ganhou, perd
     return (
         <div className="container-superior">
             <div className="forca">
-                <img src={"assets/forca" + contErro + ".png"} alt=""></img>
+                <img src={"assets/forca" + contErro + ".png"} alt="" data-test="game-image"></img>
             </div>
   
         <div className="container-direita">
             <div className="botao">
-                <button className="escolha" onClick={comecarJogo}>Escolher Palavra</button>
+                <button className="escolha" onClick={comecarJogo} data-test="choose-word">Escolher Palavra</button>
             </div>
-            <ul className={`palavra-chave ${(palavraChave.length === 0) ? "esconder" : ""} ${ganhou ? "ganhou" : ""} ${perdeu ? "perdeu" : ""}`}>
+            <ul data-test="word" 
+                data-answer="quarentena"
+                className={`palavra-chave ${(palavraChave.length === 0) ? "esconder" : ""} ${ganhou ? "ganhou" : ""} ${perdeu ? "perdeu" : ""}`}>
                 {palavraSecreta.map((p, index) => (                    
                     <li key={index} className="lista"> {p} </li>
                 ))}

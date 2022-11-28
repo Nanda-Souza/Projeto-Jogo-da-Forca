@@ -4,7 +4,8 @@ function Letras({alfabeto, preJogo, selecionados, fazerJogada}) {
     <div className="container-letras">
         {alfabeto.map((a) => (
             <div key={a} className="botao-letras ">
-                <button 
+                <button
+                data-test="letter" 
                 onClick={() => fazerJogada(a)}
                 className={`letras ${(!preJogo && !selecionados.includes(a)) ? "ativadas" : ""}`} 
                 disabled={preJogo || selecionados.includes(a)}>{a}</button>
