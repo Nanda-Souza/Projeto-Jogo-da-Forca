@@ -74,6 +74,11 @@ body {
     border-radius: 3px;
   }
 
+  .ativadas{
+    background-color: #E1ECF4;
+
+  }
+
   .container-inferior{  
     display: flex;
     margin-left: 211px;
