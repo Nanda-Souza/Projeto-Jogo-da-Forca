@@ -7,9 +7,9 @@ function Jogo({palavraChave}) {
   
         <div className="container-direita">
             <div className="botao">
-                <button className="escolha">Escolher Palavra</button>
+                <button className="escolha" disabled>Escolher Palavra</button>
             </div>
-            <ul className="palavra-chave">
+            <ul className="palavra-chave esconder">
                 {palavraChave.map((p) => (
                     <li key={p} className="lista">{p}</li>                    
                 ))}

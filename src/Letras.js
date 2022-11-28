@@ -8,7 +8,7 @@ function Letras({alfabeto}) {
 
 function Letra(props) {            
             return (
-            <div className="botao-letras">
+            <div className="botao-letras" disabled>
                 <button className="letras">{props.letra}</button>    
             </div>
             )
