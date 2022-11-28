@@ -18,6 +18,9 @@ function App() {
 function comecarJogo() {                
   setPreJogo(false); 
   palavraAleatoria();
+  setErro(0)
+  setGanhou(false)
+  setPerdeu(false)
 
 }
 
@@ -50,11 +53,13 @@ function chutar(palavra){
   if (palavra.toLowerCase() === resposta){    
     setGanhou(true)
     setPalavraSecreta(palavraChave)    
+    setPreJogo(true)
 
   } else {
     setPerdeu(true)
     setPalavraSecreta(palavraChave)
     setErro(6)
+    setPreJogo(true)
 
   }
 
