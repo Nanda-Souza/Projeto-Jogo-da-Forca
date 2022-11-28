@@ -1,17 +1,17 @@
 function Jogo({palavraChave}) {
     return (
-        <div class="container-superior">
-            <div class="forca">
+        <div className="container-superior">
+            <div className="forca">
                 <img src="assets/forca0.png" alt=""></img>
             </div>
   
-        <div class="container-direita">
-            <div class="botao">
-                <button class="escolha">Escolher Palavra</button>
+        <div className="container-direita">
+            <div className="botao">
+                <button className="escolha">Escolher Palavra</button>
             </div>
-            <ul class="palavra-chave">
+            <ul className="palavra-chave">
                 {palavraChave.map((p) => (
-                    <li key={p} class="lista">{p}</li>                    
+                    <li key={p} className="lista">{p}</li>                    
                 ))}
             </ul>
 
