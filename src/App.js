@@ -10,6 +10,7 @@ function App() {
   const [preJogo, setPreJogo] = useState(true)
   const [selecionados, setSelecionados] = useState([]);
   const [palavraSecreta, setPalavraSecreta] = useState([]);
+  const [contErro, setErro] = useState(0);
 
 function comecarJogo() {                
   setPreJogo(false); 
@@ -25,20 +26,20 @@ function palavraAleatoria() {
 }
 
 function fazerJogada(letra){
-  setSelecionados([...selecionados, letra])  
-  console.log(letra)  
+  setSelecionados([...selecionados, letra])    
   console.log(palavraChave)
   console.log(palavraSecreta)
   if (palavraChave.includes(letra.toLowerCase())){
     for(let i = 0; i < palavraChave.length; i++) {
       if (letra.toLowerCase() === palavraChave[i]){
         palavraSecreta[i] = letra.toLowerCase();
-      }
+      } 
     }
+  }else {
+    let number =  contErro
+    number = number + 1
+    setErro(number)
   }
-  
-
-
 }
 
   return (
@@ -47,6 +48,7 @@ function fazerJogada(letra){
       comecarJogo={comecarJogo}
       palavraChave={palavraChave}
       palavraSecreta={palavraSecreta}
+      contErro={contErro}
      />
      <Letras 
       alfabeto={alfabeto}

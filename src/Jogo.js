@@ -1,9 +1,9 @@
-function Jogo({palavraChave, comecarJogo, palavraSecreta}) {     
+function Jogo({palavraChave, comecarJogo, palavraSecreta, contErro}) {     
 
     return (
         <div className="container-superior">
             <div className="forca">
-                <img src="assets/forca0.png" alt=""></img>
+                <img src={"assets/forca" + contErro + ".png"} alt=""></img>
             </div>
   
         <div className="container-direita">
