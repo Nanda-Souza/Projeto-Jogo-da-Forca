@@ -1,4 +1,13 @@
-function Jogo({palavraChave}) {
+function Jogo({palavraChave, setJogo, alfabeto, setAlfabeto}) {
+
+    function comecarJogo() {        
+        const comecarAlfabeto = [...alfabeto]
+        setJogo(false);
+        setAlfabeto(comecarAlfabeto)        
+                
+
+    }
+
     return (
         <div className="container-superior">
             <div className="forca">
@@ -7,7 +16,7 @@ function Jogo({palavraChave}) {
   
         <div className="container-direita">
             <div className="botao">
-                <button className="escolha" disabled>Escolher Palavra</button>
+                <button className="escolha" onClick={comecarJogo}>Escolher Palavra</button>
             </div>
             <ul className="palavra-chave esconder">
                 {palavraChave.map((p) => (
