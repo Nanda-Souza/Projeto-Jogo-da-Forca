@@ -12,8 +12,25 @@ function App() {
         <img src="assets/forca0.png" alt=""></img>
       </div>
 
+      <div class="container-direita">
+
       <div class="botao">
         <button class="escolha">Escolher Palavra</button>
+      </div>
+
+      <ul class="underline ganhou perdeu">
+	      <li class="lista">_</li>
+	      <li class="lista">u</li>
+	      <li class="lista">a</li>
+        <li class="lista">_</li>
+	      <li class="lista">e</li>
+	      <li class="lista">_</li>
+	      <li class="lista">_</li>
+        <li class="lista">e</li>
+	      <li class="lista">_</li>
+	      <li class="lista">a</li>
+      </ul>
+
       </div>
 
      </div>

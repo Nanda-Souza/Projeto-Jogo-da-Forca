@@ -32,6 +32,11 @@ body {
     margin-left: 334px;
   }
 
+  .conteiner-direita{
+    display: flex;
+    flex-direction: column;
+  }
+
   .escolha{
     background-color: #27AE60;
     border-style: none;
@@ -41,6 +46,30 @@ body {
     border-radius: 8px;
     width: 200px;
     height: 60px;
+  }
+
+  .underline{
+    display: flex;
+    flex-direction: row;
+    margin-top: 431px;
+    margin-left: 203px;
+    width: 400px;
+    height: 68px;
+    font-size: 50px;
+  }
+
+  .underline .ganhou{
+    color:#27AE60
+  }
+
+  .underline .perdeu{
+    color:#FF0000;
+  }
+
+  .lista{
+    margin-left: 5px;
+    font-family: "Noto sans";
+    font-weight: 700
   }
 
   .container-letras{  
