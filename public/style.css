@@ -48,7 +48,7 @@ body {
     height: 60px;
   }
 
-  .underline{
+  .palavra-chave{
     display: flex;
     flex-direction: row;
     margin-top: 431px;
@@ -58,11 +58,11 @@ body {
     font-size: 50px;
   }
 
-  .underline .ganhou{
+  .ganhou{
     color:#27AE60
   }
 
-  .underline .perdeu{
+  .perdeu{
     color:#FF0000;
   }
 
@@ -149,4 +149,8 @@ body {
     box-sizing: 1px;
     border-style: solid;
 
+  }
+
+  .esconder{
+    display: none;
   }
